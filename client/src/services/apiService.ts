@@ -12,9 +12,9 @@ class ApiService {
     this.apiInstance<CategoryWithItemsType[]>('/item').then((res) => res.data);
 
   static addItem = async (data: FormData): Promise<ItemType> =>
-    this.apiInstance.post<ItemType>('/item', { data }).then((res) => res.data);
+    this.apiInstance.post<ItemType>('/item', data ).then((res) => res.data);
 
-  static deleteItem = async (id: number): Promise <void> => this.apiInstance.delete('/item');
+  static deleteItem = async (id: number): Promise<void> => this.apiInstance.delete(`/item/${id}`);
 }
 
 export default ApiService;
